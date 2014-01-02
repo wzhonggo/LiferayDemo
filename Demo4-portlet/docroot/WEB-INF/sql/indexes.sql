@@ -1,0 +1,1 @@
+create index IX_99833ED8 on Foo (field2);

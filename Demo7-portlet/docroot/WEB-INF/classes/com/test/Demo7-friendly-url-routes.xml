@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE routes PUBLIC "-//Liferay//DTD Friendly URL Routes 6.2.0//EN"
+"http://www.liferay.com/dtd/liferay-friendly-url-routes_6_2_0.dtd">
+
+<routes>
+	<route>
+		<pattern>/{instanceId}/{action}</pattern>
+		<generated-parameter name="action">{action}</generated-parameter>
+		
+		<!-- <implicit-parameter name="p_p_lifecycle"> 2</implicit-parameter>
+		<implicit-parameter name="p_p_resource_id">fileDownload</implicit-parameter>
+		<implicit-parameter name="p_p_cacheability">cacheLevelPage</implicit-parameter> -->
+		
+		
+		
+	<!-- 	<pattern>/{action}</pattern>
+		<generated-parameter name="action">{action}</generated-parameter>	 -->
+	</route>
+	<route>
+		<pattern>/{instanceId}/download/{mode}</pattern>
+		<generated-parameter name="p_p_mode">{mode}</generated-parameter>
+		
+		<!-- <implicit-parameter name="p_p_lifecycle"> 2</implicit-parameter>
+		<implicit-parameter name="p_p_resource_id">fileDownload</implicit-parameter>
+		<implicit-parameter name="p_p_cacheability">cacheLevelPage</implicit-parameter> -->
+		
+		
+		
+	<!-- 	<pattern>/{action}</pattern>
+		<generated-parameter name="action">{action}</generated-parameter>	 -->
+	</route>
+
+</routes>
