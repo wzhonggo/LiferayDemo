@@ -1,4 +1,4 @@
 LiferayDemo
 ===========
 
-Demo for liferay
+Demo for liferay 6.2
