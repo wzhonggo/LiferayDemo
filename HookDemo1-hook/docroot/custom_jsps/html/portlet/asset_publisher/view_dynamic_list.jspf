@@ -132,7 +132,7 @@ if (!portletName.equals(PortletKeys.RELATED_ASSETS) || (assetEntryQuery.getLinke
 
 			searchContainer.setTotal(total);
 
-			//results = AssetUtil.getAssetEntries(hits);
+			results = AssetUtil.getAssetEntries(hits);
 			// for test 
 			/* User currentUser = PortalUtil.getUser(request);
 			long userId = currentUser.getUserId();
@@ -160,7 +160,7 @@ if (!portletName.equals(PortletKeys.RELATED_ASSETS) || (assetEntryQuery.getLinke
 			
 			
 			
-			 User currentUser = PortalUtil.getUser(request);
+			/* User currentUser = PortalUtil.getUser(request);
 			long userId = currentUser.getUserId();
 			System.out.println("userId = " + userId);
 			System.out.println("gourpId  =  " + currentUser.getGroupId());
@@ -171,8 +171,9 @@ if (!portletName.equals(PortletKeys.RELATED_ASSETS) || (assetEntryQuery.getLinke
 					results.addAll(AssetEntryLocalServiceUtil.dynamicQuery(query));
 			}
 			catch (Exception e) {
-			}
+			}*/
 			System.out.println("===================hook==============================");
+			System.out.println("total = " + total);
 			System.out.println("size = " + results.size());
 			
 		}
