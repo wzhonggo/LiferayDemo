@@ -6,7 +6,7 @@
 	<portlet>
 		<portlet-name>demo3</portlet-name>
 		<icon>/icon.png</icon>
-		<instanceable>false</instanceable>
+		<instanceable>true</instanceable>
 		<header-portlet-css>/css/main.css</header-portlet-css>
 		<footer-portlet-javascript>
 			/js/main.js
@@ -17,7 +17,7 @@
 		<role-name>administrator</role-name>
 		<role-link>Administrator</role-link>
 	</role-mapper>
-	<role-mapper>
+<!-- 	<role-mapper>
 		<role-name>guest</role-name>
 		<role-link>Guest</role-link>
 	</role-mapper>
@@ -28,5 +28,5 @@
 	<role-mapper>
 		<role-name>user</role-name>
 		<role-link>User</role-link>
-	</role-mapper>
+	</role-mapper> -->
 </liferay-portlet-app>

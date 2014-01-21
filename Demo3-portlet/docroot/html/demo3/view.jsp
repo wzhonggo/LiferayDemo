@@ -35,15 +35,10 @@ getCategory
     message="Sorry, an error prevented the upload. Please try again." />
 
 
-<aui:form action="<%= editCaseURL %>" enctype="multipart/form-data" method="post" name="fm"  onSubmit='<%= "event.preventDefault(); " + renderResponse.getNamespace() + "saveFileEntry();" %>'>
-   <aui:select name="folderId" label="Select Folder">
-   		  <c:forEach var="dlFolder" items="${dlFolderList}" varStatus="status">
-                <aui:option value="${dlFolder.folderId}" label="${dlFolder.name}"/>           
-          </c:forEach>
-   </aui:select>
+<aui:form  action="<%= editCaseURL %>" enctype="multipart/form-data" method="post" name="fm"  onSubmit='<%= "event.preventDefault(); " + renderResponse.getNamespace() + "saveFileEntry();" %>'>
 	<aui:input name="uploadProgressId" type="hidden" value="<%= uploadProgressId %>" />
 <aui:input type="file" name="fileName" size="75"/>
-<input type="submit" value="<liferay-ui:message key="upload" />" onClick="123.startProgress(); return true;"/>
+<input type="submit" value="<liferay-ui:message key="upload" />" />
 <!--  aui:button type="submit" value="Save" /-->
 </aui:form>
 

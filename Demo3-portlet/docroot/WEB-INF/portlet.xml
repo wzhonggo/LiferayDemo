@@ -47,13 +47,13 @@
 			<mime-type>text/html</mime-type>
 			<portlet-mode>view</portlet-mode>
 			<portlet-mode>edit</portlet-mode>
-			<portlet-mode>help</portlet-mode>
+			<!-- <portlet-mode>help</portlet-mode>
 			<portlet-mode>about</portlet-mode>
 			<portlet-mode>config</portlet-mode>
 			<portlet-mode>edit_defaults</portlet-mode>
 			<portlet-mode>edit_guest</portlet-mode>
 			<portlet-mode>preview</portlet-mode>
-			<portlet-mode>print</portlet-mode>
+			<portlet-mode>print</portlet-mode> -->
 		</supports>
 		<portlet-info>
 			<title>Demo3</title>

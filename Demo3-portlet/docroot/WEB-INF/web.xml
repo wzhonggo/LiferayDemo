@@ -15,4 +15,15 @@
 		</taglib>
 	</jsp-config>
 	
+	
+<!-- 	<servlet>
+		<servlet-name>MyWebDAVServlet</servlet-name>
+		<servlet-class>com.test.MyWebDAVServlet</servlet-class>
+		 <load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MyWebDAVServlet</servlet-name>
+		<url-pattern>/download</url-pattern>
+	</servlet-mapping> -->
+	
 </web-app>
