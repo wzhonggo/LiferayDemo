@@ -3,4 +3,12 @@
 
 <hook>
 	<custom-jsp-dir>/custom_jsps</custom-jsp-dir>
+	<service>
+		<service-type>
+			com.liferay.portal.service.UserLocalService
+		</service-type>
+		<service-impl>
+			com.test.MyUserLocalServiceImpl
+		</service-impl>
+	</service>
 </hook>
