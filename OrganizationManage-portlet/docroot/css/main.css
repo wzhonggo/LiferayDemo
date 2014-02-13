@@ -1,0 +1,32 @@
+#organization{
+	margin-left:20px;
+}
+
+
+#organization td {
+	padding-right:10px;
+	
+}
+
+.blue {
+	color: #009AE5;
+}
+
+#currentOrganization{
+	margin-bottom:20px;
+}
+
+#suborganizations{
+	margin-bottom:20px;
+}
+
+
+#users{
+	margin-bottom:20px;
+}
+
+
+
+#assignUsers{
+	margin-left:20px;
+}
