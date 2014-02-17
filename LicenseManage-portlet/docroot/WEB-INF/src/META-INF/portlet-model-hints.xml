@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.labimo.model.License">
+		<field name="licenseUuid" type="String" />
+		<field name="hardwareUuid" type="String" />
+		<field name="userId" type="long" />
+		<field name="content" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+</model-hints>
