@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.labimo.service.ActivationLocalService" class="com.labimo.service.impl.ActivationLocalServiceImpl" />
+	<bean id="com.labimo.service.persistence.ActivationPersistence" class="com.labimo.service.persistence.ActivationPersistenceImpl" parent="basePersistence" />
+	<bean id="com.labimo.service.LicenseLocalService" class="com.labimo.service.impl.LicenseLocalServiceImpl" />
+	<bean id="com.labimo.service.persistence.LicensePersistence" class="com.labimo.service.persistence.LicensePersistenceImpl" parent="basePersistence" />
+	<bean id="com.labimo.service.ProductLocalService" class="com.labimo.service.impl.ProductLocalServiceImpl" />
+	<bean id="com.labimo.service.persistence.ProductPersistence" class="com.labimo.service.persistence.ProductPersistenceImpl" parent="basePersistence" />
+</beans>

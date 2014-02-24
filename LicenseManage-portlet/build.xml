@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<!DOCTYPE project>
-
-<project name="LicenseManage-portlet" basedir="." default="deploy">
-	<import file="D:\liferay\liferay-plugins-sdk-6.2.0\portlets/build-common-portlet.xml" />
-</project>

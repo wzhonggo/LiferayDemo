@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.labimo.model.impl.ActivationModelImpl">
+		<attributes>
+			<id name="activationId" />
+			<basic name="hardwareUuid" />
+			<basic name="licenseUuid" />
+			<basic name="createTime">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="valid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.labimo.model.impl.LicenseModelImpl">
+		<attributes>
+			<id name="licenseUuid" />
+			<basic name="userId" />
+			<basic name="issueDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="validDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="productId" />
+			<basic name="valid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.labimo.model.impl.ProductModelImpl">
+		<attributes>
+			<id name="productId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.labimo.model.impl.ActivationImpl" name="Activation">
+		<table name="labimo_Activation" />
+		<attributes />
+	</entity>
+	<entity class="com.labimo.model.impl.LicenseImpl" name="License">
+		<table name="labimo_License" />
+		<attributes />
+	</entity>
+	<entity class="com.labimo.model.impl.ProductImpl" name="Product">
+		<table name="labimo_Product" />
+		<attributes />
+	</entity>
+</entity-mappings>

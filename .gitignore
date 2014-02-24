@@ -4,3 +4,15 @@
 *.jar
 *.war
 *.ear
+/license-portlet/docroot/WEB-INF/classes/META-INF/base-spring.xml
+/license-portlet/docroot/WEB-INF/classes/META-INF/cluster-spring.xml
+/license-portlet/docroot/WEB-INF/classes/META-INF/hibernate-spring.xml
+/license-portlet/docroot/WEB-INF/classes/META-INF/infrastructure-spring.xml
+/license-portlet/docroot/WEB-INF/classes/META-INF/portlet-hbm.xml
+/license-portlet/docroot/WEB-INF/classes/META-INF/portlet-model-hints.xml
+/license-portlet/docroot/WEB-INF/classes/META-INF/portlet-orm.xml
+/license-portlet/docroot/WEB-INF/classes/META-INF/portlet-spring.xml
+/license-portlet/docroot/WEB-INF/classes/META-INF/shard-data-source-spring.xml
+/license-portlet/docroot/WEB-INF/classes/pubring.gpg
+/license-portlet/docroot/WEB-INF/classes/secring.gpg
+/license-portlet/docroot/WEB-INF/classes/service.properties

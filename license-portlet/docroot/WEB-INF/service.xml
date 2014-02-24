@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.labimo">
+	<author>wzgong</author>
+	<namespace>labimo</namespace>
+
+	 <entity name="License" local-service="true" remote-service="false">
+        <column name="licenseUuid" type="String" primary="true"></column>
+        <column name="userId" type="long"></column>
+        <column name="issueDate" type="Date"></column>
+        <column name="validDate" type="Date"></column>
+        <column name="createDate" type="Date"></column>
+        <column name="modifiedDate" type="Date"></column>
+          <column name="productId" type="long"></column>
+        <column name="valid" type="boolean"></column>
+    </entity>
+    <entity name="Product" local-service="true" remote-service="false">
+        <column name="productId" type="long" primary="true"></column>
+    </entity>
+    <entity remote-service="false" name="Activation" local-service="true">
+        <column name="activationId" type="String" primary="true"></column>
+        <column name="hardwareUuid" type="String"></column>
+      <column name="licenseUuid" type="String" ></column>
+        <column name="createTime" type="Date" ></column>
+        <column name="valid" type="boolean"></column>
+    </entity>
+</service-builder>

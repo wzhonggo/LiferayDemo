@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.labimo.model.Activation">
+		<field name="activationId" type="String" />
+		<field name="hardwareUuid" type="String" />
+		<field name="licenseUuid" type="String" />
+		<field name="createTime" type="Date" />
+		<field name="valid" type="boolean" />
+	</model>
+	<model name="com.labimo.model.License">
+		<field name="licenseUuid" type="String" />
+		<field name="userId" type="long" />
+		<field name="issueDate" type="Date" />
+		<field name="validDate" type="Date" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="productId" type="long" />
+		<field name="valid" type="boolean" />
+	</model>
+	<model name="com.labimo.model.Product">
+		<field name="productId" type="long" />
+	</model>
+</model-hints>
