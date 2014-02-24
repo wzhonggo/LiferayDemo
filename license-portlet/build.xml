@@ -2,5 +2,5 @@
 <!DOCTYPE project>
 
 <project name="license-portlet" basedir="." default="deploy">
-	<import file="../build-common-portlet.xml" />
+	<import file="D:/liferay/liferay-plugins-sdk-6.2.0/portlets/build-common-portlet.xml" />
 </project>
