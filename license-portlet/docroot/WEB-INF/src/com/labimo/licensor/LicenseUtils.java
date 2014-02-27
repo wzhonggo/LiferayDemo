@@ -155,65 +155,71 @@ public class LicenseUtils {
 	
 	
 	public static String getCustomUuid(UUID uuid) {
-		String id ="";
-		int position = 4;
-		int radix = 36;
-		long value = 15;
-		long least =uuid.getLeastSignificantBits();
-		long most  =uuid.getMostSignificantBits();
-		long sum = least & value + most & value;
-		String lastString = Long.toString(least >>> position, radix);
-		int lastIndex=lastString.length();
-		for(; lastIndex<12; lastIndex++){
-			lastString = "0" + lastString;
-		}
-		String mostString = Long.toString(most >>> position, radix);
-		int  mostIndex=mostString.length();
-		for(; mostIndex<12; mostIndex++){
-			mostString = "0" + mostString;
-		}
-		id = lastString + mostString + Long.toString(sum, radix) ;
-		
-		
-		long count = 0;
-		for(byte b : id.getBytes()){
-			count = count + b;
-		}
-		String countString = id + Long.toString(count, radix);
-	
-		int countIndex=id.length();
-		for(; countIndex<3; countIndex++){
-			countString = "0" + countString;
-		}
-		id = id + Long.toString(count, radix);
-		id = id.toUpperCase(); 
-		System.out.println(id + " length" + id.length());
-		return id;
+		  String id ="";
+	        int position = 2;
+	        int radix = 36;
+	        long value = 3;
+	        long least =uuid.getLeastSignificantBits();
+	        long most  =uuid.getMostSignificantBits();
+	        long leastValue = least & value;
+	        long mostValue = most & value;
+	        long sumValue = ((leastValue)<< 2) | mostValue;
+
+	  
+	        String lastString = Long.toString(least >>> position, radix);
+
+	        int lastIndex=lastString.length();
+	        for(; lastIndex<12; lastIndex++){
+	            lastString = "0" + lastString;
+	        }
+	        String mostString = Long.toString(most >>> position, radix);
+
+	        int  mostIndex=mostString.length();
+	        for(; mostIndex<12; mostIndex++){
+	            mostString = "0" + mostString;
+	        }
+	        String uuidPrefix = lastString + mostString;      
+
+	        long sum = 0;
+	        for(char c : uuidPrefix.toCharArray()){
+	            sum  = sum +  Long.parseLong(String.valueOf(c), radix);
+	        }
+	      
+	        sum =sum<<4 | sumValue;
+	        String uuidSuffix  = Long.toString(sum , radix) ;
+	        int uuidSuffixIndex=uuidSuffix.length();
+	        for(; uuidSuffixIndex<3; uuidSuffixIndex++){
+	            uuidSuffix = "0" + uuidSuffix;
+	        }
+	        id = uuidPrefix + uuidSuffix;
+	        id = id.toUpperCase();
+	   
+	        return id;
 
 	}
 	
 	public static boolean checkUuid(String uuid){
 		boolean result = false;
 	
-		int uuidLength=28;
+		int uuidLength=27;
 		int radix = 36;
-		int length=25;
+		int length=24;
 		
 		if(uuid!=null && uuid.length()==uuidLength){
 			uuid = uuid.toLowerCase();
 			String hUuid = uuid.substring(0, length);
-			String srcCode = uuid.substring(length, uuid.length());
+			String uuidsuffix = uuid.substring(length, uuid.length());
 			System.out.println("hUuid=" + hUuid);
-			System.out.println("srcCode=" + srcCode);
+			System.out.println("srcCode=" + uuidsuffix);
 			
-			long sum = 0;
-			for(byte b : hUuid.getBytes()){
-				sum = sum + b;
-			}	
-			String destCode = Long.toString(sum, radix);
-			System.out.println("sum=" +  sum);
+			long  srcCode= Long.parseLong(uuidsuffix, radix) >> 4;
+			 long destCode = 0;
+		     for(char c : hUuid.toCharArray()){
+		    	 destCode  = destCode +  Long.parseLong(String.valueOf(c), 36);
+		     }
 			System.out.println("destCode=" +  destCode);
-			if(srcCode.equals(destCode)){
+			System.out.println("srcCode=" +  srcCode);
+			if(srcCode == destCode){
 				result =true;
 			}
 			
@@ -225,8 +231,8 @@ public class LicenseUtils {
 	
 	
 	public static String formatToUuid(String uuid){
-		if(uuid!=null && uuid.length()==28){
-			uuid = uuid.substring(0, 7) + "-" + uuid.substring(7,14) + "-" + uuid.substring(14, 21) + "-" + uuid.substring(21, 28);
+		if(uuid!=null && uuid.length()==27){
+			uuid = uuid.substring(0, 5) + "-" + uuid.substring(5,9)+ "-" + uuid.substring(9,14)+ "-" + uuid.substring(14,18) + "-" + uuid.substring(18, 23) + "-" + uuid.substring(23, 27);
 		}
 		return uuid;
 	}

@@ -63,91 +63,121 @@
      	  	<aui:input type="text" placeholder="screenName" name="screenName" label=""/>
 		 	<aui:button type="submit" value="Search" />
 	</aui:form>
-	 <a href="<%= addLicensePage %>">add license  </a>
-	<table>
-			<tr>
-				<td>userId</td>
-				<td>screenName</td>
-				<td>licenseUuid</td>
-				<td>hardwareUuid</td>	
-				<td>valid</td>		
-				<td>issueDate</td>
-				<td>validDate</td>
-				<td>createDate</td>
-				<td>modifiedDate</td>
-				<td><td>
-			</tr>
-			<c:forEach items="${licenseList}" var="license" varStatus="index">
-			<c:set var="userId" scope="request" value="${license.userId}" />
-			<c:set var="licenseUuid" scope="request" value="${license.licenseUuid}" />
-				<%
-					Long userId = (Long)request.getAttribute("userId");
-					User user = UserLocalServiceUtil.getUser(userId);
+	 <aui:a href="<%= addLicensePage %>" label="add license"  ></aui:a>
+  	<liferay-ui:search-container >
+		<liferay-ui:search-container-results
+			results="${licenseList}"
+			total="${fn:length(licenseList)}"
+		/>
+	
+		<liferay-ui:search-container-row
+			className="com.labimo.model.License"
+			keyProperty="licenseUuid"
+			modelVar="license"
+		>
+		
+			<%
+					
+					User user = UserLocalServiceUtil.getUser(license.getUserId());
 					String screenName = user.getScreenName();
 				
-						String licenseUuid = (String)request.getAttribute("licenseUuid");
-						List<Activation> activationList = LicenseUtils.getActivationListByLicenseUuid(licenseUuid);
-						
-					String editLicenseUrl= editLicense +  "&" +renderResponse.getNamespace()+"licenseUuid="+  licenseUuid;
-					String editActivationUrl= editActivation +  "&" +renderResponse.getNamespace()+"licenseUuid="+  licenseUuid;
+						//String licenseUuid = (String)request.getAttribute("licenseUuid");
+						List<Activation> activationList = LicenseUtils.getActivationListByLicenseUuid(license.getLicenseUuid());
+						String hardwareUuids = "";
+						for(Activation activation : activationList){
+							hardwareUuids += LicenseUtils.formatToUuid(activation.getHardwareUuid()) + "<br/>";
+						}
+					String editLicenseUrl= editLicense +  "&" +renderResponse.getNamespace()+"licenseUuid="+  license.getLicenseUuid();
+					String editActivationUrl= editActivation +  "&" +renderResponse.getNamespace()+"licenseUuid="+  license.getLicenseUuid();
 				
 				%>
-				<tr>
-					<td> ${license.userId}</td>
-					<td><%=screenName %></td>
-					<td><%=LicenseUtils.formatToUuid(licenseUuid) %></td>
 				
-					<td>
-					<%
-						for(Activation activation : activationList){
-					%>
-							<%=LicenseUtils.formatToUuid(activation.getHardwareUuid()) %> <br/>
-					<%		
-							
-						}
-					%>
-					</td>
-					<td>${license.valid}</td>
-					<td><fmt:formatDate value="${license.issueDate}" pattern="yyyy-MM-dd"/> </td>
-					<td><fmt:formatDate value="${license.validDate}" pattern="yyyy-MM-dd"/></td>
-					<td><fmt:formatDate value="${license.createDate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
-					<td><fmt:formatDate value="${license.modifiedDate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+			<liferay-ui:search-container-column-text
+				name="userId"
+				property="userId"
+			/>
+	
+			<liferay-ui:search-container-column-text
+				name="screenName"
+				value="<%=screenName %>"
+			/>
+			
+			
+				<liferay-ui:search-container-column-text
+				name="licenseUuid"
+				value="<%=LicenseUtils.formatToUuid(license.getLicenseUuid())%>"
+			/>
+			
+			
+			<liferay-ui:search-container-column-text
+				name="hardwareUuid"
+				value="<%=hardwareUuids%>"
+			/>
+			
+			<liferay-ui:search-container-column-text
+				name="valid"
+				property="valid"
+			/>
+			<fmt:formatDate value="${license.issueDate}" pattern="yyyy-MM-dd" var="issueDate"/>
+			<fmt:formatDate value="${license.validDate}" pattern="yyyy-MM-dd" var="validDate"/>
+			<fmt:formatDate value="${license.createDate}" pattern="yyyy-MM-dd HH:mm:ss" var="createDate"/>
+			<fmt:formatDate value="${license.modifiedDate}" pattern="yyyy-MM-dd HH:mm:ss" var="modifiedDate"/>
+			<liferay-ui:search-container-column-text
+				name="issueDate"
+				value="${issueDate}"
+			/>
+			<liferay-ui:search-container-column-text
+				name="validDate"
+				value="${validDate}"
+			/>
+			<liferay-ui:search-container-column-text
+				name="createDate"
+				value="${createDate}"
+			/>
+			<%-- <liferay-ui:search-container-column-text
+				name="modifiedDate"
+				value="${modifiedDate}"
+			/>  --%>
+			
+			<liferay-ui:search-container-column-date
+				name="modifiedDate"
+				property="modifiedDate"
+			/> 
+			
+			
+			<liferay-ui:search-container-column-text
 				
-					<td>
-					<%--  <form action="<portlet:actionURL name="editLicense"></portlet:actionURL>" method="post" name="<portlet:namespace />editLicense">
-							 <input type=hidden name="<portlet:namespace/>licenseUuid" value="${license.licenseUuid}"></input> 
-							
-							 <input type="submit" value="Edit" />
-						</form>  --%> 
-						
-							<liferay-ui:icon-menu>
-								<liferay-ui:icon
-									image="edit"
-									message="editLicense"
-									url="<%=editLicenseUrl %>"
-								/>
-						
-								<liferay-ui:icon
-									image="edit"
-									method="get"
-									message="editActivation"
-									url="<%= editActivationUrl %>"
-									useDialog="<%= true %>"
-								/>
-						
-							
-						</liferay-ui:icon-menu>	
-					</td>
-				</tr>
-			</c:forEach>
-		</table>
-  
+			>
+		
+
+				<liferay-ui:icon-menu>
+					<liferay-ui:icon image="edit" message="editLicense"
+						url="<%=editLicenseUrl%>" />
+				
+					<liferay-ui:icon image="edit"  message="editActivation"
+						url="<%=editActivationUrl%>"/>		
+				</liferay-ui:icon-menu>
+			
+			</liferay-ui:search-container-column-text>
+			
+	<%-- 	 <liferay-ui:search-container-column-jsp
+				
+					path="/license_action.jsp"
+				/> 
+		<c:set var="licenseUuid" scope="request" value="<%=license.getLicenseUuid() %>" />	 --%>
+		</liferay-ui:search-container-row>
+
+	<liferay-ui:search-iterator />
+
+</liferay-ui:search-container>
 </c:if>
 
 <c:if test="${action eq  'editLicense'}">
 
 <c:set var="userId" scope="request" value="${license.userId}" />
 			<c:set var="licenseUuid" scope="request" value="${license.licenseUuid}" />
+				<c:set var="issueDate" scope="request" value="${license.issueDate}" />
+					<c:set var="validDate" scope="request" value="${license.validDate}" />
 				<%
 					Long userId = (Long)request.getAttribute("userId");
 					User user = UserLocalServiceUtil.getUser(userId);
@@ -155,6 +185,15 @@
 				
 						String licenseUuid = (String)request.getAttribute("licenseUuid");
 						List<Activation> activationList = LicenseUtils.getActivationListByLicenseUuid(licenseUuid);
+						
+						Date issueDate = (Date)request.getAttribute("issueDate");
+						Calendar issueCalendar = Calendar.getInstance();
+						issueCalendar.setTime(issueDate);
+						
+						Date validDate = (Date)request.getAttribute("validDate");
+						Calendar validCalendar = Calendar.getInstance();
+						validCalendar.setTime(validDate);
+						
 				%>
    
 <form action="<portlet:actionURL name="updateLicense"></portlet:actionURL>" method="post" name="<portlet:namespace />updateLicense">   
@@ -170,26 +209,29 @@
 			
 			 <tr>
 				<td>licenseUuid</td>
-				<td><input type="text" name="<portlet:namespace/>licenseUuid" readonly="readonly" value="<%=LicenseUtils.formatToUuid(licenseUuid) %>" /> </td>
+				<td><input type="text" name="<portlet:namespace/>licenseUuid" readonly="readonly" value="<%=LicenseUtils.formatToUuid(licenseUuid) %>" style="width:300px;"/> </td>
 			</tr>
 			<tr>
 				<td>hardwareUuid</td>
 					<%
 						for(Activation activation : activationList){
 					%>
-						<td><input type="text" name="<portlet:namespace/>hardwareUuid" readonly="readonly" value="<%=LicenseUtils.formatToUuid(activation.getHardwareUuid()) %>"  /> </td>	
+						<td><input type="text" name="<portlet:namespace/>hardwareUuid" readonly="readonly" value="<%=LicenseUtils.formatToUuid(activation.getHardwareUuid()) %>"  style="width:300px;"/> </td>	
 					<%		
 							
 						}
 					%>
 			</tr>
+			
 			<tr>
 				<td>issueDate</td>
-					<td><input type="text" name="<portlet:namespace/>issueDate"  value="<fmt:formatDate value="${license.issueDate}" pattern="yyyy-MM-dd"/>" /> </td>
+					<td><liferay-ui:input-date name="issueDate"  yearValue="<%=issueCalendar.get(Calendar.YEAR) %>" 
+					monthValue="<%=issueCalendar.get(Calendar.MONTH) %>" dayValue="<%=issueCalendar.get(Calendar.DATE) %>" ></liferay-ui:input-date> </td>
 			</tr>
 			<tr>
 				<td>validDate</td>
-							<td><input type="text" name="<portlet:namespace/>validDate" value="<fmt:formatDate value="${license.validDate}" pattern="yyyy-MM-dd"/>" /></td>
+							<td><liferay-ui:input-date name="validDate" yearValue="<%=validCalendar.get(Calendar.YEAR) %>"
+							 monthValue="<%=validCalendar.get(Calendar.MONTH) %>" dayValue="<%=validCalendar.get(Calendar.DATE) %>" ></liferay-ui:input-date></td>
 			</tr>
 				<tr>
 				<td>valid</td>
@@ -210,8 +252,8 @@
 				<td><input type="text" name="<portlet:namespace/>modifiedDate" readonly="readonly" value="<fmt:formatDate value="${license.modifiedDate}" pattern="yyyy-MM-dd HH:mm:ss"/>" /> </td>
 			</tr>
 				<tr>
-				<td> <input type="submit" value="Update" /></td>
-				<td> <input type="button" value="Cancel" onClick="reloadPage()"/></td>
+				<td><aui:button type="submit" value="Update"  /></td>
+				<td> <aui:button name="cancelButton" type="button" value="Cancel" onClick="reloadPage()"/> </td>
 			</tr>
 			
  </table>  
@@ -250,9 +292,9 @@
 <%--    <aui:input name="validDate"  label="validDate" ></aui:input> --%>
  <%--   <liferay-ui:input-date formName="validDate" monthValue="02" yearValue="2014" yearParam="yyyy"   yearRangeStart="2014"     yearRangeEnd="2015"></liferay-ui:input-date> --%>
   issueDate<br>
-      <liferay-ui:input-date formName="issueDate"  yearValue="${year}" monthValue="${month}" dayValue="${day}" ></liferay-ui:input-date><br>
+      <liferay-ui:input-date name="issueDate"  yearValue="${year}" monthValue="${month}" dayValue="${day}" dayParam="issue_day" monthParam="issue_month" yearParam="issue_year"></liferay-ui:input-date><br><br><br>
         validDate<br>
-     <liferay-ui:input-date formName="validDate" yearValue="${year}" monthValue="${month}" dayValue="${day}" ></liferay-ui:input-date><br>
+     <liferay-ui:input-date name="validDate" cssClass="yyyy-MM-dd" formName="yyyy-MM-dd" yearValue="${year}" monthValue="${month}" dayValue="${day}" dayParam="valid_day" monthParam="valid_month" yearParam="valid_year" ></liferay-ui:input-date><br>
  	<%-- <liferay-ui:input-date yearRangeEnd="2009" yearRangeStart="1900" dayParam="birthday_day" monthParam="birthday_month" yearParam="birthday_year"/> --%>
    
    <aui:button-row>
@@ -269,7 +311,7 @@
 <form action="<%=updateActivation %>" method="post" name="<portlet:namespace/>updateActivation">   
 <% 
 String licenseUuid = (String)request.getAttribute("licenseUuid"); %>
-	<input type="hidden" name="<portlet:namespace/>licenseUuid" readonly="readonly" value="${licenseUuid}" />
+	<%-- <input type="hidden" name="<portlet:namespace/>licenseUuid" readonly="readonly" value="${licenseUuid}" />
    <table>
 		
 			 <tr>
@@ -285,10 +327,10 @@ String licenseUuid = (String)request.getAttribute("licenseUuid"); %>
 			<c:forEach items="${activationList}" var="activation" varStatus="index">		
 					<c:set var="hardwareUuid" scope="request" value="${activation.hardwareUuid}" />
 				<tr>		
-					<td><input type="text" name="<portlet:namespace/>hardwareUuid"  value="<%=LicenseUtils.formatToUuid((String)request.getAttribute("hardwareUuid")) %>"  />
+					<td><input type="text" style="width:300px;" readonly="readonly" name="<portlet:namespace/>hardwareUuid"  value="<%=LicenseUtils.formatToUuid((String)request.getAttribute("hardwareUuid")) %>"  />
 					
 					 </td>
-					<td>${activation.createTime}</td>
+					<td><fmt:formatDate value="${activation.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
 					<td>
 					<aui:select label="" name="activationId_valid">
 						<aui:option id="${activation.activationId}" selected="${activation.valid}" value="${activation.activationId}_true">True</aui:option>
@@ -299,12 +341,108 @@ String licenseUuid = (String)request.getAttribute("licenseUuid"); %>
 			</c:forEach>
 			
 				<tr>
-				<td> <input type="submit" value="Update" /></td>
-				<td> <input type="button" value="Cancel" onClick="reloadPage()"/></td>
+				<!-- <td> <input type="submit" value="Update" /></td>
+				<td> <input type="button" value="Cancel" onClick="reloadPage()"/></td> -->
+				<td>
+					 <aui:button-row>
+					 <aui:button type="submit" value="Update"  />
+					<aui:button name="cancelButton" type="button" value="Cancel" onClick="reloadPage()"/> 
+					</aui:button-row>
+				</td>
+			
 			</tr>
 			
- </table>  
+ </table>   --%>
+ 
+ <aui:input name="licenseUuid" label="licenseUuid" value="<%=LicenseUtils.formatToUuid(licenseUuid)%>"  disabled="true" style="width:300px;"></aui:input>
+ <liferay-ui:search-container >
+		<liferay-ui:search-container-results
+			results="${activationList}"
+			total="${fn:length(activationList)}"
+		/>
+	
+		<liferay-ui:search-container-row
+			className="com.labimo.model.Activation"
+			keyProperty="activationId"
+			modelVar="activation"
+		>
+			<liferay-ui:search-container-column-text
+				name="hardwareUuid"
+				value="<%=LicenseUtils.formatToUuid(activation.getHardwareUuid()) %>"
+			/>
+			
+			<fmt:formatDate value="${activation.createTime}" pattern="yyyy-MM-dd HH:mm:ss" var="createDate"/>
+		
+			<liferay-ui:search-container-column-text
+				name="createDate"
+				value="${createDate}"
+			/>
+			
+			
+			<liferay-ui:search-container-column-text>			
+				<aui:select label="" name="activationId_valid" >
+						<aui:option selected="${activation.valid}" value="${activation.activationId}_true">True</aui:option>
+						<aui:option selected="${!activation.valid}" value="${activation.activationId}_false">False</aui:option>
+					</aui:select>
+			</liferay-ui:search-container-column-text>
+		</liferay-ui:search-container-row>
+
+	<liferay-ui:search-iterator />
+
+</liferay-ui:search-container>
+
+	 			<aui:button-row>
+					 <aui:button type="submit" value="Update"  />
+					<aui:button name="cancelButton" type="button" value="Cancel" onClick="reloadPage()"/> 
+					</aui:button-row>
+
 </form>
+
+<%-- <aui:layout>
+		<aui:column columnWidth="35" first="true">
+		123
+		</aui:column>
+		<aui:column columnWidth="35">
+			123123
+		</aui:column>
+			<aui:column columnWidth="25" last="true">
+			123123123
+		</aui:column>
+		
+		
+</aui:layout>
+
+<aui:field-wrapper name="gender">
+		<aui:input inlineLabel="right" name="gender" type="radio" value="1" label="male" />
+		<aui:input checked="<%= true %>" inlineLabel="right" name="gender" type="radio" value="2" label="female"  />
+	</aui:field-wrapper>	
+
+<liferay-ui:search-container >
+	<liferay-ui:search-container-results
+		results="<%= UserLocalServiceUtil.getOrganizationUsers(33801)%>"
+		total="<%= UserLocalServiceUtil.getOrganizationUsersCount(33801) %>"
+	/>
+
+	<liferay-ui:search-container-row
+		className="com.liferay.portal.model.User"
+		keyProperty="userId"
+		modelVar="user"
+	>
+		<liferay-ui:search-container-column-text
+			name="name"
+			value="<%= user.getFullName() %>"
+		/>
+
+		<liferay-ui:search-container-column-text
+			name="first-name"
+			property="firstName"
+		/>
+	</liferay-ui:search-container-row>
+
+	<liferay-ui:search-iterator />
+
+</liferay-ui:search-container> --%>
+	
 </c:if>
    
 

@@ -34,6 +34,8 @@
 <portlet:actionURL var="addHardwareUuidPage" name="addHardwareUuidPage">
 </portlet:actionURL>
 
+<portlet:actionURL  var="addHardwareUuid" name="addHardwareUuid"></portlet:actionURL>
+
 <c:if test="${fn:length(licenseList) == 0}">
 		You do not have license, please buy a license!
 </c:if>
@@ -41,109 +43,134 @@
 
 <c:if test="${fn:length(licenseList) != 0}">
 <c:if test="${action == null}">
-	<table>
-			<tr>
-				<td>licenseUuid</td>
-					<td>valid</td>		
-				<td>issueDate</td>
-				<td>validDate</td>
-				<td>createDate</td>
-				<td>modifiedDate</td>
-				<td>hardwareUuid</td>
-				<td><td>
-			</tr>
-			<c:forEach items="${licenseList}" var="license" varStatus="index">
-			<c:set var="licenseUuid" scope="request" value="${license.licenseUuid}" />
-					<%String licenseUuid = (String)request.getAttribute("licenseUuid");
-					
-					String addHardwareUuidPageUrl = addHardwareUuidPage + "&" +renderResponse.getNamespace()+"licenseUuid="+  licenseUuid;
-					List<Activation> activationList = LicenseUtils.getActivationListByLicenseUuid(licenseUuid);
+
+		<liferay-ui:search-container >
+		<liferay-ui:search-container-results
+			results="${licenseList}"
+			total="${fn:length(licenseList)}"
+		/>
+	
+		<liferay-ui:search-container-row
+			className="com.labimo.model.License"
+			keyProperty="licenseUuid"
+			modelVar="license"
+		>
+		<c:set var="licenseUuid" scope="request" value="<%=license.getLicenseUuid() %>" />
+	
+			<liferay-ui:search-container-column-text
+				name="licenseUuid"
+				value="<%=LicenseUtils.formatToUuid(license.getLicenseUuid()) %>"
+			/>
+	
+			<liferay-ui:search-container-column-text
+				name="valid"
+					property="valid"
+			/>
+						
+			<%
+						String licenseUuid = license.getLicenseUuid();
+						List<Activation> activationList = LicenseUtils
+								.getActivationListByLicenseUuid(licenseUuid);
+		%>
+			 <liferay-ui:search-container-column-text
+					name="hardwareUuid"
+				
+				> 
+				<%
+						
+						for (Activation activation : activationList) {
+							String href = "/license-portlet/licenseDownload?hardwareUuid="
+									+ activation.getHardwareUuid() + "&licenseUuid="
+									+ activation.getLicenseUuid();
+							String hardwareUuid = LicenseUtils.formatToUuid(activation
+									.getHardwareUuid());
 					%>
-					<c:set var="activationList" scope="request" value="<%=activationList %>" />
+						<%=hardwareUuid %>
+						
+						<%
+							if(activation.getValid() && license.getValid()){			
+							
+						%>
+						
+							<aui:a href="<%= href %>" label="download license"></aui:a>
 					
-						<tr>
-							<td><%=LicenseUtils.formatToUuid(licenseUuid) %></td>
-								<td>${license.valid}</td>
-							<td><fmt:formatDate value="${license.issueDate}" pattern="yyyy-MM-dd"/></td>
-							<td><fmt:formatDate value="${license.validDate}" pattern="yyyy-MM-dd"/>${license.validDate}</td>
-							<td><fmt:formatDate value="${license.createDate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
-							<td><fmt:formatDate value="${license.modifiedDate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
-							
-							<c:if test="${fn:length(activationList) == 0 || activationList ==null}">
-								<td></td>
-								<td>
-									<liferay-ui:icon-menu>
-												<liferay-ui:icon
-													image="add"
-													message="addHardwareUuid"
-													url="<%=addHardwareUuidPageUrl %>"
-												/>	
-																
-											
-									</liferay-ui:icon-menu>	
 									
-										<%-- <form action="<portlet:actionURL name="addHardwareUuidPage"></portlet:actionURL>" method="post" name="<portlet:namespace />addHardwareUuidPage">
-											<input type="hidden" name="<portlet:namespace/>licenseUuid"  value="${license.licenseUuid}"/>
-											 <input type="submit" value="addHardwareUuid" />
-										</form>  --%>
-										
-									</td>	
-							</c:if>
+						<% 			
+							}else{
+								
 							
-							<c:if test="${fn:length(activationList) > 0 && fn:length(activationList) <5}">
-							<td>
-								<c:forEach items="<%=activationList %>" var="activation" varStatus="index">
-										<input type="text" name="<portlet:namespace/>hardwareUuid" readonly="readonly" value="${activation.hardwareUuid}"  />
-									<c:if test="${activation.valid && license.valid}">
-										<a href="/license-portlet/licenseDownload?hardwareUuid=${activation.hardwareUuid}&licenseUuid=${activation.licenseUuid}">download</a> 
-									</c:if>
-									<c:if test="${!activation.valid || !license.valid}">
-										not activation 
-									</c:if>
-										
-									<br>
-								</c:forEach>
-								</td>	
-								<td>
-									<liferay-ui:icon-menu>
-											<liferay-ui:icon
-												image="add"
-												message="addHardwareUuid"
-												url="<%=addHardwareUuidPageUrl %>"
-											/>		
-											
+						%>
+						 not activation
+							<% 			
+							}
+						%>
+						<br>
 									
-											
-								</liferay-ui:icon-menu>	
-										<%-- <form action="<portlet:actionURL name="addHardwareUuidPage"></portlet:actionURL>" method="post" name="<portlet:namespace />addHardwareUuidPage">
-											<input type="hidden" name="<portlet:namespace/>licenseUuid"  value="${license.licenseUuid}"/>
-											 <input type="submit" value="addHardwareUuid" />
-										</form>  --%>
-										
-									</td>	
-							</c:if>
+					<% 			
+						}
+					%>
+				</liferay-ui:search-container-column-text>
+				
+			
+			<fmt:formatDate value="${license.issueDate}" pattern="yyyy-MM-dd" var="issueDate"/>
+			<fmt:formatDate value="${license.validDate}" pattern="yyyy-MM-dd" var="validDate"/>
+			<fmt:formatDate value="${license.createDate}" pattern="yyyy-MM-dd HH:mm:ss" var="createDate"/>
+			<fmt:formatDate value="${license.modifiedDate}" pattern="yyyy-MM-dd HH:mm:ss" var="modifiedDate"/>
+			<liferay-ui:search-container-column-text
+				name="issueDate"
+				value="${issueDate}"
+			/>
+			<liferay-ui:search-container-column-text
+				name="validDate"
+				value="${validDate}"
+			/>
+			<liferay-ui:search-container-column-text
+				name="createDate"
+				value="${createDate}"
+			/>
+			<liferay-ui:search-container-column-date
+				name="modifiedDate"
+				property="modifiedDate"
+			/> 
+			
+			
+			
+				<liferay-ui:search-container-column-text>
+					<%
+						if(activationList==null || activationList.size() < 5){
+							String addHardwareUuidPageUrl = addHardwareUuidPage + "&" +renderResponse.getNamespace()+"licenseUuid="+  licenseUuid;
 							
-								<c:if test="${ fn:length(activationList) >= 5}">
-									<td>
-									<c:forEach items="<%=activationList %>" var="activation" varStatus="index">
-											<input type="text" name="<portlet:namespace/>hardwareUuid" readonly="readonly" value="${activation.hardwareUuid}"  />
-										
-											<c:if test="${activation.valid}">
-											<a href="/license-portlet/licenseDownload?hardwareUuid=${activation.hardwareUuid}&licenseUuid=${activation.licenseUuid}">download</a>
-											</c:if>
-											<c:if test="${!activation.valid}">
-												not activation 
-											</c:if>
-										 <br>
-									</c:forEach>
-									</td>
-									<td></td>	
-								</c:if>
+					%>
+					<liferay-ui:icon-menu showWhenSingleIcon="true">
+						<liferay-ui:icon image="add" message="addHardwareUuid"
+							url="<%=addHardwareUuidPageUrl%>" />
+					
+					
+					</liferay-ui:icon-menu>
+					<%
+						}else{
 							
-						</tr>
-			</c:forEach>
-		</table>
+					%>	
+					Up to bind 5  Hardware Uuid.
+					<% 	
+					}
+						
+					%>
+				
+				
+					
+				</liferay-ui:search-container-column-text>			
+			 		
+				
+		 
+				
 		
+			
+		</liferay-ui:search-container-row>
+
+	<liferay-ui:search-iterator />
+
+</liferay-ui:search-container>
 		
 </c:if>
 
@@ -152,7 +179,7 @@
 <c:if test="${action eq  'addHardwareUuidPage'}">
 <% 
 String licenseUuid = (String)request.getAttribute("licenseUuid"); %>
-		<form action="<portlet:actionURL name="addHardwareUuid"></portlet:actionURL>" method="post" name="<portlet:namespace />addHardwareUuid"> 
+		<%-- <form action="<portlet:actionURL name="addHardwareUuid"></portlet:actionURL>" method="post" name="<portlet:namespace />addHardwareUuid"> 
 		<table>
 				<tr>
 					<td>licenseUuid</td>
@@ -170,12 +197,23 @@ String licenseUuid = (String)request.getAttribute("licenseUuid"); %>
 							<td> <input type="button" value="Cancel" onClick="reloadPage()"/></td>
 						</tr>
 			</table>
-	</form>
+	</form> --%>
+	
+	
+	<aui:form action="<%= addHardwareUuid %>" method="post" name="<portlet:namespace />addHardwareUuid" >
+	 <aui:input name="licenseUuid"  label="licenseUuid" value="<%=LicenseUtils.formatToUuid(licenseUuid)  %>" type="hidden"></aui:input>
+	     <aui:input name="licenseUuid2"  label="licenseUuid" value="<%=LicenseUtils.formatToUuid(licenseUuid) %>" style="width:300px;"  disabled="true"></aui:input>
+	 	<aui:input name="hardwareUuid"  label="hardwareUuid"  style="width:300px;"></aui:input>
+	   <aui:button-row>
+			<aui:button name="saveButton" type="submit" value="Update"  />
+			<aui:button name="cancelButton" type="button" value="Cancel" onClick="reloadPage()" />
+		</aui:button-row>
+
+	</aui:form>
 </c:if>
 
 
 </c:if>
-
 
 	
 
