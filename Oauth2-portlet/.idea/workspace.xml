@@ -1,52 +1,349 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="068c48d8-b291-4e5d-982a-74cedb226794" name="Default" comment="liferay Oauth 2 provider and tincan Portlet init">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.classpath" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.project" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.settings/.jsdtscope" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.settings/org.eclipse.jst.jsp.core.prefs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.component" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.project.facet.core.prefs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.project.facet.core.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.container" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.validation.prefs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Oauth2-portlet.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/META-INF/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/liferay-display.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/liferay-hook.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/liferay-plugin-package.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/liferay-portlet.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/portlet.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/AuthorizeServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/Oauth2Info.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/TokenServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/tld/aui.tld" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/tld/liferay-portlet-ext.tld" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/tld/liferay-portlet.tld" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/tld/liferay-security.tld" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/tld/liferay-theme.tld" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/tld/liferay-ui.tld" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/tld/liferay-util.tld" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/web.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/css/.sass-cache/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/css/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/custom_jsps/html/portlet/login/login.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/js/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/view.jsp" />
+    <list default="true" id="02efc891-7d3a-4267-bae5-5f78f60039c2" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/NoSuchLiferayTincanManifestActException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/NoSuchLiferayUserException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/NoSuchOauth2ClientException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/NoSuchOauth2EndpointException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/NoSuchOauth2TokenException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/NoSuchTincanActivityStateException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/NoSuchTincanAgentException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/NoSuchTincanAgentProfileException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/NoSuchTincanAttachmentException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/NoSuchTincanStatementAttachmentException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/NoSuchTincanStatementContextException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/NoSuchTincanStatementException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/NoSuchTincanStatementResultException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/NoSuchTincanSubStatementException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/NoSuchTincanVerbException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/LiferayTincanManifestAct.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/LiferayTincanManifestActClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/LiferayTincanManifestActModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/LiferayTincanManifestActSoap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/LiferayTincanManifestActWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/LiferayUser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/LiferayUserClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/LiferayUserModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/LiferayUserSoap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/LiferayUserWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/Oauth2Client.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/Oauth2ClientClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/Oauth2ClientModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/Oauth2ClientSoap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/Oauth2ClientWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/Oauth2Endpoint.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/Oauth2EndpointClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/Oauth2EndpointModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/Oauth2EndpointSoap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/Oauth2EndpointWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/Oauth2Token.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/Oauth2TokenClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/Oauth2TokenModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/Oauth2TokenSoap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/Oauth2TokenWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanActivityState.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanActivityStateClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanActivityStateModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanActivityStateSoap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanActivityStateWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanAgent.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanAgentClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanAgentModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanAgentProfile.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanAgentProfileClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanAgentProfileModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanAgentProfileSoap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanAgentProfileWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanAgentSoap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanAgentWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanAttachment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanAttachmentClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanAttachmentModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanAttachmentSoap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanAttachmentWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanStatement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanStatementAttachment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanStatementAttachmentClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanStatementAttachmentModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanStatementAttachmentSoap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanStatementAttachmentWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanStatementClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanStatementContext.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanStatementContextClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanStatementContextModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanStatementContextSoap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanStatementContextWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanStatementModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanStatementResult.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanStatementResultClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanStatementResultModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanStatementResultSoap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanStatementResultWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanStatementSoap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanStatementWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanSubStatement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanSubStatementClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanSubStatementModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanSubStatementSoap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanSubStatementWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanVerb.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanVerbClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanVerbModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanVerbSoap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/model/TincanVerbWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/ClpSerializer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/LiferayTincanManifestActLocalService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/LiferayTincanManifestActLocalServiceClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/LiferayTincanManifestActLocalServiceUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/LiferayTincanManifestActLocalServiceWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/LiferayUserLocalService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/LiferayUserLocalServiceClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/LiferayUserLocalServiceUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/LiferayUserLocalServiceWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/Oauth2ClientLocalService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/Oauth2ClientLocalServiceClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/Oauth2ClientLocalServiceUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/Oauth2ClientLocalServiceWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/Oauth2EndpointLocalService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/Oauth2EndpointLocalServiceClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/Oauth2EndpointLocalServiceUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/Oauth2EndpointLocalServiceWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/Oauth2TokenLocalService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/Oauth2TokenLocalServiceClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/Oauth2TokenLocalServiceUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/Oauth2TokenLocalServiceWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanActivityStateLocalService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanActivityStateLocalServiceClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanActivityStateLocalServiceUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanActivityStateLocalServiceWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanAgentLocalService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanAgentLocalServiceClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanAgentLocalServiceUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanAgentLocalServiceWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanAgentProfileLocalService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanAgentProfileLocalServiceClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanAgentProfileLocalServiceUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanAgentProfileLocalServiceWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanAttachmentLocalService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanAttachmentLocalServiceClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanAttachmentLocalServiceUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanAttachmentLocalServiceWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanStatementAttachmentLocalService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanStatementAttachmentLocalServiceClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanStatementAttachmentLocalServiceUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanStatementAttachmentLocalServiceWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanStatementContextLocalService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanStatementContextLocalServiceClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanStatementContextLocalServiceUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanStatementContextLocalServiceWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanStatementLocalService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanStatementLocalServiceClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanStatementLocalServiceUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanStatementLocalServiceWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanStatementResultLocalService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanStatementResultLocalServiceClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanStatementResultLocalServiceUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanStatementResultLocalServiceWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanSubStatementLocalService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanSubStatementLocalServiceClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanSubStatementLocalServiceUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanSubStatementLocalServiceWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanVerbLocalService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanVerbLocalServiceClp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanVerbLocalServiceUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/TincanVerbLocalServiceWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/messaging/ClpMessageListener.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/LiferayTincanManifestActActionableDynamicQuery.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/LiferayTincanManifestActPersistence.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/LiferayTincanManifestActUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/LiferayUserActionableDynamicQuery.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/LiferayUserPersistence.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/LiferayUserUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/Oauth2ClientPersistence.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/Oauth2ClientUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/Oauth2EndpointActionableDynamicQuery.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/Oauth2EndpointPersistence.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/Oauth2EndpointUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/Oauth2TokenActionableDynamicQuery.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/Oauth2TokenPersistence.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/Oauth2TokenUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanActivityStateActionableDynamicQuery.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanActivityStatePersistence.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanActivityStateUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanAgentActionableDynamicQuery.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanAgentPersistence.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanAgentProfileActionableDynamicQuery.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanAgentProfilePersistence.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanAgentProfileUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanAgentUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanAttachmentActionableDynamicQuery.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanAttachmentPersistence.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanAttachmentUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanStatementActionableDynamicQuery.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanStatementAttachmentActionableDynamicQuery.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanStatementAttachmentPersistence.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanStatementAttachmentUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanStatementContextActionableDynamicQuery.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanStatementContextPersistence.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanStatementContextUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanStatementPersistence.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanStatementResultActionableDynamicQuery.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanStatementResultPersistence.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanStatementResultUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanStatementUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanSubStatementActionableDynamicQuery.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanSubStatementPersistence.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanSubStatementUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanVerbActionableDynamicQuery.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanVerbPersistence.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/service/com/labimo/portlet/tincan/service/persistence/TincanVerbUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/sql/indexes.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/sql/indexes.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/sql/sequences.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/sql/tables.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/META-INF/base-spring.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/META-INF/cluster-spring.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/META-INF/hibernate-spring.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/META-INF/infrastructure-spring.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/META-INF/portlet-hbm.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/META-INF/portlet-model-hints.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/META-INF/portlet-orm.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/META-INF/portlet-spring.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/META-INF/shard-data-source-spring.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/oauth2/AuthorizeServlet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/oauth2/Oauth2Info.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/oauth2/TokenServlet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/LiferayTincanManifestActBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/LiferayTincanManifestActCacheModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/LiferayTincanManifestActImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/LiferayTincanManifestActModelImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/LiferayUserBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/LiferayUserCacheModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/LiferayUserImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/LiferayUserModelImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/Oauth2ClientBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/Oauth2ClientCacheModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/Oauth2ClientImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/Oauth2ClientModelImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/Oauth2EndpointBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/Oauth2EndpointCacheModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/Oauth2EndpointImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/Oauth2EndpointModelImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/Oauth2TokenBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/Oauth2TokenCacheModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/Oauth2TokenImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/Oauth2TokenModelImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanActivityStateBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanActivityStateCacheModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanActivityStateImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanActivityStateModelImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanAgentBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanAgentCacheModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanAgentImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanAgentModelImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanAgentProfileBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanAgentProfileCacheModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanAgentProfileImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanAgentProfileModelImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanAttachmentBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanAttachmentCacheModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanAttachmentImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanAttachmentModelImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanStatementAttachmentBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanStatementAttachmentCacheModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanStatementAttachmentImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanStatementAttachmentModelImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanStatementBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanStatementCacheModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanStatementContextBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanStatementContextCacheModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanStatementContextImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanStatementContextModelImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanStatementImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanStatementModelImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanStatementResultBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanStatementResultCacheModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanStatementResultImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanStatementResultModelImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanSubStatementBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanSubStatementCacheModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanSubStatementImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanSubStatementModelImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanVerbBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanVerbCacheModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanVerbImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/model/impl/TincanVerbModelImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/LiferayTincanManifestActLocalServiceBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/LiferayTincanManifestActLocalServiceClpInvoker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/LiferayUserLocalServiceBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/LiferayUserLocalServiceClpInvoker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/Oauth2ClientLocalServiceBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/Oauth2ClientLocalServiceClpInvoker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/Oauth2EndpointLocalServiceBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/Oauth2EndpointLocalServiceClpInvoker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/Oauth2TokenLocalServiceBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/Oauth2TokenLocalServiceClpInvoker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/TincanActivityStateLocalServiceBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/TincanActivityStateLocalServiceClpInvoker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/TincanAgentLocalServiceBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/TincanAgentLocalServiceClpInvoker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/TincanAgentProfileLocalServiceBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/TincanAgentProfileLocalServiceClpInvoker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/TincanAttachmentLocalServiceBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/TincanAttachmentLocalServiceClpInvoker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/TincanStatementAttachmentLocalServiceBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/TincanStatementAttachmentLocalServiceClpInvoker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/TincanStatementContextLocalServiceBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/TincanStatementContextLocalServiceClpInvoker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/TincanStatementLocalServiceBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/TincanStatementLocalServiceClpInvoker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/TincanStatementResultLocalServiceBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/TincanStatementResultLocalServiceClpInvoker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/TincanSubStatementLocalServiceBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/TincanSubStatementLocalServiceClpInvoker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/TincanVerbLocalServiceBaseImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/base/TincanVerbLocalServiceClpInvoker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/impl/LiferayTincanManifestActLocalServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/impl/LiferayUserLocalServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/impl/Oauth2ClientLocalServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/impl/Oauth2EndpointLocalServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/impl/Oauth2TokenLocalServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/impl/TincanActivityStateLocalServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/impl/TincanAgentLocalServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/impl/TincanAgentProfileLocalServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/impl/TincanAttachmentLocalServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/impl/TincanStatementAttachmentLocalServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/impl/TincanStatementContextLocalServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/impl/TincanStatementLocalServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/impl/TincanStatementResultLocalServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/impl/TincanSubStatementLocalServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/impl/TincanVerbLocalServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/persistence/LiferayTincanManifestActPersistenceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/persistence/LiferayUserPersistenceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/persistence/Oauth2ClientPersistenceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/persistence/Oauth2EndpointPersistenceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/persistence/Oauth2TokenPersistenceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/persistence/TincanActivityStatePersistenceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/persistence/TincanAgentPersistenceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/persistence/TincanAgentProfilePersistenceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/persistence/TincanAttachmentPersistenceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/persistence/TincanStatementAttachmentPersistenceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/persistence/TincanStatementContextPersistenceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/persistence/TincanStatementPersistenceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/persistence/TincanStatementResultPersistenceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/persistence/TincanSubStatementPersistenceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/portlet/tincan/service/persistence/TincanVerbPersistenceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docroot/WEB-INF/src/service.properties" />
+      <change type="DELETED" beforePath="D:\GIT\LiferayDemo\Oauth2-portlet\docroot\WEB-INF\src\com\labimo\AuthorizeServlet.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\GIT\LiferayDemo\Oauth2-portlet\docroot\WEB-INF\src\com\labimo\Oauth2Info.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\GIT\LiferayDemo\Oauth2-portlet\docroot\WEB-INF\src\com\labimo\TokenServlet.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Oauth2-portlet.iml" afterPath="$PROJECT_DIR$/Oauth2-portlet.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docroot/WEB-INF/liferay-plugin-package.properties" afterPath="$PROJECT_DIR$/docroot/WEB-INF/liferay-plugin-package.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docroot/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/docroot/WEB-INF/web.xml" />
     </list>
     <ignored path="Oauth2-portlet.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -102,55 +399,19 @@
   <component name="FavoritesManager">
     <favorites_list name="Oauth2-portlet" />
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="AuthorizeServlet.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/AuthorizeServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="21" selection-start="885" selection-end="885" vertical-scroll-proportion="0.85583526">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Oauth2Info.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/Oauth2Info.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="13" selection-start="34" selection-end="34" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TokenServlet.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/TokenServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="13" selection-start="1105" selection-end="1105" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FindManager">
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="wzhonggo@gmail.com" />
-      </list>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="100" />
-    <option name="y" value="106" />
-    <option name="width" value="1651" />
-    <option name="height" value="855" />
+    <option name="x" value="4" />
+    <option name="y" value="110" />
+    <option name="width" value="1936" />
+    <option name="height" value="846" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -180,21 +441,16 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Oauth2-portlet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Oauth2-portlet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -266,8 +522,52 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="labimo" />
+              <option name="myItemId" value="Oauth2-portlet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Oauth2-portlet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="docroot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="META-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Oauth2-portlet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Oauth2-portlet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="docroot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sql" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -293,25 +593,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Oauth2-portlet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Oauth2-portlet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="docroot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -345,24 +661,6 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -389,6 +687,24 @@
       <envs />
       <properties />
       <listeners />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -469,13 +785,13 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <created>1397798774370</created>
-      <updated>1397798774370</updated>
+      <created>1398063570550</created>
+      <updated>1398063570550</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="100" y="106" width="1651" height="855" extended-state="0" />
+    <frame x="4" y="110" width="1936" height="846" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -488,13 +804,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32803467" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39306358" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24952741" sideWeight="0.6719653" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -540,7 +855,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="liferay Oauth 2 provider and tincan Portlet init" />
+    <option name="LAST_COMMIT_MESSAGE" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -553,7 +868,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="liferay Oauth 2 provider and tincan Portlet init" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -591,120 +905,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
-  </component>
-  <component name="antWorkspaceConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="FILTER_TARGETS" value="false" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/Oauth2Info.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="13" selection-start="34" selection-end="34" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/TokenServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="13" selection-start="1105" selection-end="1105" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docroot/WEB-INF/src/com/labimo/AuthorizeServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="21" selection-start="885" selection-end="885" vertical-scroll-proportion="0.85583526">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>Python 2.7.3 (D:\OX\Python273\python.exe) interpreter library</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.6</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>Oauth2-portlet</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.6</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
 

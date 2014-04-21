@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.labimo.portlet.tincan">
+	<author>wzgong</author>
+	<namespace>labimo</namespace>
+   <!--  <entity name="TincanActivity" local-service="true" remote-service="false">
+        <column name="id" type="long" primary="true" id-type="increment"></column>
+        <column name="activityId" type="String"></column>
+        <column name="objectType" type="String"></column>
+        <column name="activityDefinitionName" type="String"></column>
+        <column name="activityDefinitionDescription" type="String"></column>
+        <column name="activityDefinitionType" type="String"></column>
+        <column name="activityDefinitionMoreInfo" type="String"></column>
+        <column name="activityDefinitionInteractionType" type="String"></column>
+        <column name="activityDefinitionExtensions" type="String"></column>
+        <column name="activityDefinitionCrpanswers" type="String"></column>
+        <column name="activityDefinitionChoices" type="String"></column>
+        <column name="activityDefinitionScales" type="String"></column>
+        <column name="activityDefinitionSources" type="String"></column>
+        <column name="activityDefinitionTargets" type="String"></column>
+        <column name="activityDefinitionSteps" type="String"></column>
+        <column name="authoritative" type="String"></column>
+        <column name="canonical_version" type="boolean"></column>
+    </entity>
+    <entity name="TincanActivityProfile" local-service="true" remote-service="false">
+        <column name="id" type="long" primary="true" id-type="increment"></column>
+        <column name="profileId" type="String"></column>
+        <column name="activityId" type="String"></column>
+        <column name="jsonProfile" type="String"></column>
+        <column name="profile" type="String"></column>
+        <column name="updated" type="Date"></column>
+        <column name="content_type" type="String"></column>
+        <column name="etag" type="String"></column>
+    </entity> -->
+    <entity remote-service="false" local-service="true" name="TincanActivityState">
+        <column name="id" type="long" primary="true" id-type="increment"></column>
+        <column name="stateId" type="String"></column>
+        <column name="state" type="String"></column>
+        <column name="jsonState" type="String"></column>
+        <column name="agentId" type="long"></column>
+        <column name="activityId" type="long"></column>
+        <column name="registration" type="String"></column>
+        <column name="etag" type="String"></column>
+        <column name="updated" type="Date"></column>
+        <column name="contentType" type="String"></column>
+    </entity>
+    <entity name="TincanAgent" local-service="true" remote-service="false">
+        <column name="id" type="long" primary="true" id-type="increment"></column>
+        <column name="objectType" type="String"></column>
+        <column name="name" type="String"></column>
+        <column name="mbox" type="String"></column>
+        <column name="mbox_sha1sum" type="String"></column>
+        <column name="openID" type="String"></column>
+        <column name="oauth_identifier" type="String"></column>
+        <column name="canonical_version" type="boolean"></column>
+    </entity>
+    <entity name="TincanAgentProfile" local-service="true" remote-service="false">
+        <column name="id" type="long" primary="true" id-type="increment"></column>
+        <column name="profileId" type="String"></column>
+        <column name="updated" type="Date"></column>
+        <column name="agentId" type="long"></column>
+        <column name="profile" type="String"></column>
+        <column name="json_profile" type="String"></column>
+        <column name="content_type" type="String"></column>
+        <column name="etag" type="String"></column>
+    </entity>
+    <entity local-service="true" name="TincanStatement" remote-service="false">
+        <column name="id" primary="true" type="long" id-type="increment"></column>
+        <column name="statementId" type="String"></column>
+        <column name="subStatementId" type="long"></column>
+        <column name="agentId" type="long"></column>
+        <column name="contextId" type="long"></column>
+        <column name="activityId" type="long"></column>
+        <column name="resultId" type="long"></column>
+        <column name="authorityId" type="long"></column>
+        <column name="timestamp" type="Date"></column>
+        <column name="stored" type="Date"></column>
+        <column name="version" type="String"></column>
+        <column name="verbId" type="long"></column>
+        <column name="voided" type="boolean"></column>
+    </entity>
+    <entity name="TincanStatementResult" local-service="true" remote-service="false">
+        <column name="id" primary="true" type="long" id-type="increment"></column>
+        <column name="success" type="boolean"></column>
+        <column name="completion" type="boolean"></column>
+        <column name="response" type="String"></column>
+        <column name="duration" type="String"></column>
+        <column name="extension" type="String"></column>
+        <column name="scoreScaled" type="double"></column>
+        <column name="scoreRaw" type="double"></column>
+        <column name="scoreMin" type="double"></column>
+        <column name="scoreMax" type="double"></column>
+    </entity>
+    <entity name="TincanStatementContext" local-service="true" remote-service="false">
+        <column name="id" type="long" primary="true" id-type="increment"></column>
+        <column name="registration" type="String"></column>
+        <column name="instructorId" type="long"></column>
+        <column name="teamId" type="long"></column>
+        <column name="contextActivitiesId" type="long"></column>
+        <column name="revision" type="String"></column>
+        <column name="platform" type="String"></column>
+        <column name="language" type="String"></column>
+        <column name="statement" type="String"></column>
+        <column name="extensions" type="String"></column>
+    </entity>
+    <entity name="TincanStatementAttachment" remote-service="false" local-service="true">
+        <column name="id" type="long" primary="true" id-type="increment"></column>
+        <column name="statementId" type="long"></column>
+        <column name="statementAttachmentId" type="long"></column>
+    </entity>
+    <entity name="TincanAttachment" local-service="true" remote-service="false">
+        <column name="id" type="long" primary="true" id-type="increment"></column>
+        <column name="usageType" type="String"></column>
+        <column name="contentType" type="String"></column>
+        <column name="length" type="long"></column>
+        <column name="sha2" type="long"></column>
+        <column name="fileUrl" type="String"></column>
+        <column name="payload" type="String"></column>
+        <column name="display" type="String"></column>
+        <column name="description" type="String"></column>
+    </entity>
+    <entity name="TincanSubStatement" local-service="true" remote-service="false">
+        <column name="id" type="long" primary="true" id-type="increment"></column>
+        <column name="agentId" type="long"></column>
+        <column name="activityId" type="long"></column>
+        <column name="resultId" type="long"></column>
+        <column name="contextId" type="long"></column>
+        <column name="verbId" type="long"></column>
+        <column name="timestamp" type="Date"></column>
+    </entity>
+    <entity local-service="true" name="TincanVerb" remote-service="false">
+        <column name="id" primary="true" type="long" id-type="increment"></column>
+        <column name="verbId" type="String"></column>
+        <column name="display" type="String"></column>
+    </entity>
+    <entity name="LiferayUser" remote-service="false" local-service="true">
+        <column name="id" type="long" primary="true" id-type="identity"></column>
+        <column name="liferayUserId" type="long"></column>
+        <column name="name" type="String"></column>
+        <column name="preferredAudioLevel" type="double"></column>
+        <column name="preferredLanguage" type="String"></column>
+        <column name="preferredDeliverySpeed" type="double"></column>
+        <column name="preferredAudioCaptioning" type="long"></column>
+    </entity>
+    <entity name="LiferayTincanManifestAct" remote-service="false" local-service="true">
+        <column name="id" type="long" primary="true" id-type="increment"></column>
+        <column name="activityId" type="String"></column>
+        <column name="name" type="String"></column>
+        <column name="description" type="String"></column>
+        <column name="launch" type="String"></column>
+    </entity>
+   <!--  <entity local-service="true" name="LiferayFileStorage" remote-service="false"></entity> -->
+    <entity name="Oauth2Client" local-service="true" remote-service="false">
+        <column name="id" type="String" primary="true"></column>
+        <column name="name" type="String"></column>
+        <column name="description" type="String"></column>
+        <column name="secret" type="String"></column>
+        <column name="url" type="String"></column>
+        <column name="redirectUrl" type="String"></column>
+        <column name="scope" type="String"></column>
+        <column name="iconUrl" type="String"></column>
+        <column name="liferayUserId" type="long"></column>
+    </entity> 
+    <entity name="Oauth2Token" remote-service="false" local-service="true">
+        <column name="id" type="long" primary="true" id-type="increment"></column>
+        <column name="code" type="String"></column>
+        <column name="token" type="String"></column>
+        <column name="refreshToken" type="String"></column>
+        <column name="clientId" type="long"></column>
+        <column name="expiredIn" type="long"></column>
+        <column name="liferayUserId" type="long"></column>
+    </entity>
+    <entity name="Oauth2Endpoint" local-service="true" remote-service="false">
+        <column name="id" type="long" primary="true" id-type="increment"></column>
+        <column name="liferayUserId" type="long"></column>
+        <column name="oauthType" type="String"></column>
+        <column name="isPublic" type="boolean"></column>
+        <column name="guestAccess" type="boolean"></column>
+    </entity>
+</service-builder>

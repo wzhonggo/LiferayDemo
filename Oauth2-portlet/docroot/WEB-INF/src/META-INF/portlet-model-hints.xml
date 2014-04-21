@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.labimo.portlet.tincan.model.LiferayTincanManifestAct">
+		<field name="id" type="long" />
+		<field name="activityId" type="String" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+		<field name="launch" type="String" />
+	</model>
+	<model name="com.labimo.portlet.tincan.model.LiferayUser">
+		<field name="id" type="long" />
+		<field name="liferayUserId" type="long" />
+		<field name="name" type="String" />
+		<field name="preferredAudioLevel" type="double" />
+		<field name="preferredLanguage" type="String" />
+		<field name="preferredDeliverySpeed" type="double" />
+		<field name="preferredAudioCaptioning" type="long" />
+	</model>
+	<model name="com.labimo.portlet.tincan.model.Oauth2Client">
+		<field name="id" type="String" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+		<field name="secret" type="String" />
+		<field name="url" type="String" />
+		<field name="redirectUrl" type="String" />
+		<field name="scope" type="String" />
+		<field name="iconUrl" type="String" />
+		<field name="liferayUserId" type="long" />
+	</model>
+	<model name="com.labimo.portlet.tincan.model.Oauth2Endpoint">
+		<field name="id" type="long" />
+		<field name="liferayUserId" type="long" />
+		<field name="oauthType" type="String" />
+		<field name="isPublic" type="boolean" />
+		<field name="guestAccess" type="boolean" />
+	</model>
+	<model name="com.labimo.portlet.tincan.model.Oauth2Token">
+		<field name="id" type="long" />
+		<field name="code" type="String" />
+		<field name="token" type="String" />
+		<field name="refreshToken" type="String" />
+		<field name="clientId" type="long" />
+		<field name="expiredIn" type="long" />
+		<field name="liferayUserId" type="long" />
+	</model>
+	<model name="com.labimo.portlet.tincan.model.TincanActivityState">
+		<field name="id" type="long" />
+		<field name="stateId" type="String" />
+		<field name="state" type="String" />
+		<field name="jsonState" type="String" />
+		<field name="agentId" type="long" />
+		<field name="activityId" type="long" />
+		<field name="registration" type="String" />
+		<field name="etag" type="String" />
+		<field name="updated" type="Date" />
+		<field name="contentType" type="String" />
+	</model>
+	<model name="com.labimo.portlet.tincan.model.TincanAgent">
+		<field name="id" type="long" />
+		<field name="objectType" type="String" />
+		<field name="name" type="String" />
+		<field name="mbox" type="String" />
+		<field name="mbox_sha1sum" type="String" />
+		<field name="openID" type="String" />
+		<field name="oauth_identifier" type="String" />
+		<field name="canonical_version" type="boolean" />
+	</model>
+	<model name="com.labimo.portlet.tincan.model.TincanAgentProfile">
+		<field name="id" type="long" />
+		<field name="profileId" type="String" />
+		<field name="updated" type="Date" />
+		<field name="agentId" type="long" />
+		<field name="profile" type="String" />
+		<field name="json_profile" type="String" />
+		<field name="content_type" type="String" />
+		<field name="etag" type="String" />
+	</model>
+	<model name="com.labimo.portlet.tincan.model.TincanAttachment">
+		<field name="id" type="long" />
+		<field name="usageType" type="String" />
+		<field name="contentType" type="String" />
+		<field name="length" type="long" />
+		<field name="sha2" type="long" />
+		<field name="fileUrl" type="String" />
+		<field name="payload" type="String" />
+		<field name="display" type="String" />
+		<field name="description" type="String" />
+	</model>
+	<model name="com.labimo.portlet.tincan.model.TincanStatement">
+		<field name="id" type="long" />
+		<field name="statementId" type="String" />
+		<field name="subStatementId" type="long" />
+		<field name="agentId" type="long" />
+		<field name="contextId" type="long" />
+		<field name="activityId" type="long" />
+		<field name="resultId" type="long" />
+		<field name="authorityId" type="long" />
+		<field name="timestamp" type="Date" />
+		<field name="stored" type="Date" />
+		<field name="version" type="String" />
+		<field name="verbId" type="long" />
+		<field name="voided" type="boolean" />
+	</model>
+	<model name="com.labimo.portlet.tincan.model.TincanStatementAttachment">
+		<field name="id" type="long" />
+		<field name="statementId" type="long" />
+		<field name="statementAttachmentId" type="long" />
+	</model>
+	<model name="com.labimo.portlet.tincan.model.TincanStatementContext">
+		<field name="id" type="long" />
+		<field name="registration" type="String" />
+		<field name="instructorId" type="long" />
+		<field name="teamId" type="long" />
+		<field name="contextActivitiesId" type="long" />
+		<field name="revision" type="String" />
+		<field name="platform" type="String" />
+		<field name="language" type="String" />
+		<field name="statement" type="String" />
+		<field name="extensions" type="String" />
+	</model>
+	<model name="com.labimo.portlet.tincan.model.TincanStatementResult">
+		<field name="id" type="long" />
+		<field name="success" type="boolean" />
+		<field name="completion" type="boolean" />
+		<field name="response" type="String" />
+		<field name="duration" type="String" />
+		<field name="extension" type="String" />
+		<field name="scoreScaled" type="double" />
+		<field name="scoreRaw" type="double" />
+		<field name="scoreMin" type="double" />
+		<field name="scoreMax" type="double" />
+	</model>
+	<model name="com.labimo.portlet.tincan.model.TincanSubStatement">
+		<field name="id" type="long" />
+		<field name="agentId" type="long" />
+		<field name="activityId" type="long" />
+		<field name="resultId" type="long" />
+		<field name="contextId" type="long" />
+		<field name="verbId" type="long" />
+		<field name="timestamp" type="Date" />
+	</model>
+	<model name="com.labimo.portlet.tincan.model.TincanVerb">
+		<field name="id" type="long" />
+		<field name="verbId" type="String" />
+		<field name="display" type="String" />
+	</model>
+</model-hints>

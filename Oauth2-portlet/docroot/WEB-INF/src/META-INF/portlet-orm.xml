@@ -1,0 +1,337 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.labimo.portlet.tincan.model.impl.LiferayTincanManifestActModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="activityId" />
+			<basic name="name" />
+			<basic name="description" />
+			<basic name="launch" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.labimo.portlet.tincan.model.impl.LiferayUserModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="liferayUserId" />
+			<basic name="name" />
+			<basic name="preferredAudioLevel" />
+			<basic name="preferredLanguage" />
+			<basic name="preferredDeliverySpeed" />
+			<basic name="preferredAudioCaptioning" />
+			<transient name="liferayUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.labimo.portlet.tincan.model.impl.Oauth2ClientModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="name" />
+			<basic name="description" />
+			<basic name="secret" />
+			<basic name="url" />
+			<basic name="redirectUrl" />
+			<basic name="scope" />
+			<basic name="iconUrl" />
+			<basic name="liferayUserId" />
+			<transient name="liferayUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.labimo.portlet.tincan.model.impl.Oauth2EndpointModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="liferayUserId" />
+			<basic name="oauthType" />
+			<basic name="isPublic" />
+			<basic name="guestAccess" />
+			<transient name="liferayUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.labimo.portlet.tincan.model.impl.Oauth2TokenModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="code">
+				<column name="CODE_" />
+			</basic>
+			<basic name="token" />
+			<basic name="refreshToken" />
+			<basic name="clientId" />
+			<basic name="expiredIn" />
+			<basic name="liferayUserId" />
+			<transient name="liferayUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.labimo.portlet.tincan.model.impl.TincanActivityStateModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="stateId" />
+			<basic name="state">
+				<column name="STATE_" />
+			</basic>
+			<basic name="jsonState" />
+			<basic name="agentId" />
+			<basic name="activityId" />
+			<basic name="registration" />
+			<basic name="etag" />
+			<basic name="updated">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="contentType" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.labimo.portlet.tincan.model.impl.TincanAgentModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="objectType" />
+			<basic name="name" />
+			<basic name="mbox" />
+			<basic name="mbox_sha1sum" />
+			<basic name="openID" />
+			<basic name="oauth_identifier" />
+			<basic name="canonical_version" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.labimo.portlet.tincan.model.impl.TincanAgentProfileModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="profileId" />
+			<basic name="updated">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="agentId" />
+			<basic name="profile" />
+			<basic name="json_profile" />
+			<basic name="content_type" />
+			<basic name="etag" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.labimo.portlet.tincan.model.impl.TincanAttachmentModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="usageType" />
+			<basic name="contentType" />
+			<basic name="length" />
+			<basic name="sha2" />
+			<basic name="fileUrl" />
+			<basic name="payload" />
+			<basic name="display" />
+			<basic name="description" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.labimo.portlet.tincan.model.impl.TincanStatementModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="statementId" />
+			<basic name="subStatementId" />
+			<basic name="agentId" />
+			<basic name="contextId" />
+			<basic name="activityId" />
+			<basic name="resultId" />
+			<basic name="authorityId" />
+			<basic name="timestamp">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="stored">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="version" />
+			<basic name="verbId" />
+			<basic name="voided" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.labimo.portlet.tincan.model.impl.TincanStatementAttachmentModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="statementId" />
+			<basic name="statementAttachmentId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.labimo.portlet.tincan.model.impl.TincanStatementContextModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="registration" />
+			<basic name="instructorId" />
+			<basic name="teamId" />
+			<basic name="contextActivitiesId" />
+			<basic name="revision" />
+			<basic name="platform" />
+			<basic name="language" />
+			<basic name="statement" />
+			<basic name="extensions" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.labimo.portlet.tincan.model.impl.TincanStatementResultModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="success" />
+			<basic name="completion" />
+			<basic name="response" />
+			<basic name="duration" />
+			<basic name="extension" />
+			<basic name="scoreScaled" />
+			<basic name="scoreRaw" />
+			<basic name="scoreMin" />
+			<basic name="scoreMax" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.labimo.portlet.tincan.model.impl.TincanSubStatementModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="agentId" />
+			<basic name="activityId" />
+			<basic name="resultId" />
+			<basic name="contextId" />
+			<basic name="verbId" />
+			<basic name="timestamp">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.labimo.portlet.tincan.model.impl.TincanVerbModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="verbId" />
+			<basic name="display" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.labimo.portlet.tincan.model.impl.LiferayTincanManifestActImpl" name="LiferayTincanManifestAct">
+		<table name="labimo_LiferayTincanManifestAct" />
+		<attributes />
+	</entity>
+	<entity class="com.labimo.portlet.tincan.model.impl.LiferayUserImpl" name="LiferayUser">
+		<table name="labimo_LiferayUser" />
+		<attributes />
+	</entity>
+	<entity class="com.labimo.portlet.tincan.model.impl.Oauth2ClientImpl" name="Oauth2Client">
+		<table name="labimo_Oauth2Client" />
+		<attributes />
+	</entity>
+	<entity class="com.labimo.portlet.tincan.model.impl.Oauth2EndpointImpl" name="Oauth2Endpoint">
+		<table name="labimo_Oauth2Endpoint" />
+		<attributes />
+	</entity>
+	<entity class="com.labimo.portlet.tincan.model.impl.Oauth2TokenImpl" name="Oauth2Token">
+		<table name="labimo_Oauth2Token" />
+		<attributes />
+	</entity>
+	<entity class="com.labimo.portlet.tincan.model.impl.TincanActivityStateImpl" name="TincanActivityState">
+		<table name="labimo_TincanActivityState" />
+		<attributes />
+	</entity>
+	<entity class="com.labimo.portlet.tincan.model.impl.TincanAgentImpl" name="TincanAgent">
+		<table name="labimo_TincanAgent" />
+		<attributes />
+	</entity>
+	<entity class="com.labimo.portlet.tincan.model.impl.TincanAgentProfileImpl" name="TincanAgentProfile">
+		<table name="labimo_TincanAgentProfile" />
+		<attributes />
+	</entity>
+	<entity class="com.labimo.portlet.tincan.model.impl.TincanAttachmentImpl" name="TincanAttachment">
+		<table name="labimo_TincanAttachment" />
+		<attributes />
+	</entity>
+	<entity class="com.labimo.portlet.tincan.model.impl.TincanStatementImpl" name="TincanStatement">
+		<table name="labimo_TincanStatement" />
+		<attributes />
+	</entity>
+	<entity class="com.labimo.portlet.tincan.model.impl.TincanStatementAttachmentImpl" name="TincanStatementAttachment">
+		<table name="labimo_TincanStatementAttachment" />
+		<attributes />
+	</entity>
+	<entity class="com.labimo.portlet.tincan.model.impl.TincanStatementContextImpl" name="TincanStatementContext">
+		<table name="labimo_TincanStatementContext" />
+		<attributes />
+	</entity>
+	<entity class="com.labimo.portlet.tincan.model.impl.TincanStatementResultImpl" name="TincanStatementResult">
+		<table name="labimo_TincanStatementResult" />
+		<attributes />
+	</entity>
+	<entity class="com.labimo.portlet.tincan.model.impl.TincanSubStatementImpl" name="TincanSubStatement">
+		<table name="labimo_TincanSubStatement" />
+		<attributes />
+	</entity>
+	<entity class="com.labimo.portlet.tincan.model.impl.TincanVerbImpl" name="TincanVerb">
+		<table name="labimo_TincanVerb" />
+		<attributes />
+	</entity>
+</entity-mappings>

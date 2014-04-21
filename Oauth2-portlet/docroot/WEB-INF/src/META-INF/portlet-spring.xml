@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.labimo.portlet.tincan.service.LiferayTincanManifestActLocalService" class="com.labimo.portlet.tincan.service.impl.LiferayTincanManifestActLocalServiceImpl" />
+	<bean id="com.labimo.portlet.tincan.service.persistence.LiferayTincanManifestActPersistence" class="com.labimo.portlet.tincan.service.persistence.LiferayTincanManifestActPersistenceImpl" parent="basePersistence" />
+	<bean id="com.labimo.portlet.tincan.service.LiferayUserLocalService" class="com.labimo.portlet.tincan.service.impl.LiferayUserLocalServiceImpl" />
+	<bean id="com.labimo.portlet.tincan.service.persistence.LiferayUserPersistence" class="com.labimo.portlet.tincan.service.persistence.LiferayUserPersistenceImpl" parent="basePersistence" />
+	<bean id="com.labimo.portlet.tincan.service.Oauth2ClientLocalService" class="com.labimo.portlet.tincan.service.impl.Oauth2ClientLocalServiceImpl" />
+	<bean id="com.labimo.portlet.tincan.service.persistence.Oauth2ClientPersistence" class="com.labimo.portlet.tincan.service.persistence.Oauth2ClientPersistenceImpl" parent="basePersistence" />
+	<bean id="com.labimo.portlet.tincan.service.Oauth2EndpointLocalService" class="com.labimo.portlet.tincan.service.impl.Oauth2EndpointLocalServiceImpl" />
+	<bean id="com.labimo.portlet.tincan.service.persistence.Oauth2EndpointPersistence" class="com.labimo.portlet.tincan.service.persistence.Oauth2EndpointPersistenceImpl" parent="basePersistence" />
+	<bean id="com.labimo.portlet.tincan.service.Oauth2TokenLocalService" class="com.labimo.portlet.tincan.service.impl.Oauth2TokenLocalServiceImpl" />
+	<bean id="com.labimo.portlet.tincan.service.persistence.Oauth2TokenPersistence" class="com.labimo.portlet.tincan.service.persistence.Oauth2TokenPersistenceImpl" parent="basePersistence" />
+	<bean id="com.labimo.portlet.tincan.service.TincanActivityStateLocalService" class="com.labimo.portlet.tincan.service.impl.TincanActivityStateLocalServiceImpl" />
+	<bean id="com.labimo.portlet.tincan.service.persistence.TincanActivityStatePersistence" class="com.labimo.portlet.tincan.service.persistence.TincanActivityStatePersistenceImpl" parent="basePersistence" />
+	<bean id="com.labimo.portlet.tincan.service.TincanAgentLocalService" class="com.labimo.portlet.tincan.service.impl.TincanAgentLocalServiceImpl" />
+	<bean id="com.labimo.portlet.tincan.service.persistence.TincanAgentPersistence" class="com.labimo.portlet.tincan.service.persistence.TincanAgentPersistenceImpl" parent="basePersistence" />
+	<bean id="com.labimo.portlet.tincan.service.TincanAgentProfileLocalService" class="com.labimo.portlet.tincan.service.impl.TincanAgentProfileLocalServiceImpl" />
+	<bean id="com.labimo.portlet.tincan.service.persistence.TincanAgentProfilePersistence" class="com.labimo.portlet.tincan.service.persistence.TincanAgentProfilePersistenceImpl" parent="basePersistence" />
+	<bean id="com.labimo.portlet.tincan.service.TincanAttachmentLocalService" class="com.labimo.portlet.tincan.service.impl.TincanAttachmentLocalServiceImpl" />
+	<bean id="com.labimo.portlet.tincan.service.persistence.TincanAttachmentPersistence" class="com.labimo.portlet.tincan.service.persistence.TincanAttachmentPersistenceImpl" parent="basePersistence" />
+	<bean id="com.labimo.portlet.tincan.service.TincanStatementLocalService" class="com.labimo.portlet.tincan.service.impl.TincanStatementLocalServiceImpl" />
+	<bean id="com.labimo.portlet.tincan.service.persistence.TincanStatementPersistence" class="com.labimo.portlet.tincan.service.persistence.TincanStatementPersistenceImpl" parent="basePersistence" />
+	<bean id="com.labimo.portlet.tincan.service.TincanStatementAttachmentLocalService" class="com.labimo.portlet.tincan.service.impl.TincanStatementAttachmentLocalServiceImpl" />
+	<bean id="com.labimo.portlet.tincan.service.persistence.TincanStatementAttachmentPersistence" class="com.labimo.portlet.tincan.service.persistence.TincanStatementAttachmentPersistenceImpl" parent="basePersistence" />
+	<bean id="com.labimo.portlet.tincan.service.TincanStatementContextLocalService" class="com.labimo.portlet.tincan.service.impl.TincanStatementContextLocalServiceImpl" />
+	<bean id="com.labimo.portlet.tincan.service.persistence.TincanStatementContextPersistence" class="com.labimo.portlet.tincan.service.persistence.TincanStatementContextPersistenceImpl" parent="basePersistence" />
+	<bean id="com.labimo.portlet.tincan.service.TincanStatementResultLocalService" class="com.labimo.portlet.tincan.service.impl.TincanStatementResultLocalServiceImpl" />
+	<bean id="com.labimo.portlet.tincan.service.persistence.TincanStatementResultPersistence" class="com.labimo.portlet.tincan.service.persistence.TincanStatementResultPersistenceImpl" parent="basePersistence" />
+	<bean id="com.labimo.portlet.tincan.service.TincanSubStatementLocalService" class="com.labimo.portlet.tincan.service.impl.TincanSubStatementLocalServiceImpl" />
+	<bean id="com.labimo.portlet.tincan.service.persistence.TincanSubStatementPersistence" class="com.labimo.portlet.tincan.service.persistence.TincanSubStatementPersistenceImpl" parent="basePersistence" />
+	<bean id="com.labimo.portlet.tincan.service.TincanVerbLocalService" class="com.labimo.portlet.tincan.service.impl.TincanVerbLocalServiceImpl" />
+	<bean id="com.labimo.portlet.tincan.service.persistence.TincanVerbPersistence" class="com.labimo.portlet.tincan.service.persistence.TincanVerbPersistenceImpl" parent="basePersistence" />
+</beans>
