@@ -7,6 +7,8 @@
 	<import class="com.labimo.portlet.tincan.model.Oauth2Client" />
 	<import class="com.labimo.portlet.tincan.model.Oauth2Endpoint" />
 	<import class="com.labimo.portlet.tincan.model.Oauth2Token" />
+	<import class="com.labimo.portlet.tincan.model.TincanActivity" />
+	<import class="com.labimo.portlet.tincan.model.TincanActivityProfile" />
 	<import class="com.labimo.portlet.tincan.model.TincanActivityState" />
 	<import class="com.labimo.portlet.tincan.model.TincanAgent" />
 	<import class="com.labimo.portlet.tincan.model.TincanAgentProfile" />
@@ -71,9 +73,44 @@
 		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
 		<property name="token" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="refreshToken" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-		<property name="clientId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="clientId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="expiredIn" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="liferayUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.labimo.portlet.tincan.model.impl.TincanActivityImpl" table="labimo_TincanActivity">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="increment" />
+		</id>
+		<property name="activityId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="objectType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="activityDefinitionName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="activityDefinitionDescription" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="activityDefinitionType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="activityDefinitionMoreInfo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="activityDefinitionInteractionType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="activityDefinitionExtensions" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="activityDefinitionCrpanswers" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="activityDefinitionChoices" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="activityDefinitionScales" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="activityDefinitionSources" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="activityDefinitionTargets" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="activityDefinitionSteps" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="authoritative" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="canonical_version" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="com.labimo.portlet.tincan.model.impl.TincanActivityProfileImpl" table="labimo_TincanActivityProfile">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="increment" />
+		</id>
+		<property name="profileId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="activityId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="jsonProfile" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="profile" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="updated" type="org.hibernate.type.TimestampType" />
+		<property name="content_type" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="etag" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
 	<class name="com.labimo.portlet.tincan.model.impl.TincanActivityStateImpl" table="labimo_TincanActivityState">
 		<cache usage="read-write" />

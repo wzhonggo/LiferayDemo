@@ -41,9 +41,40 @@ create table labimo_Oauth2Token (
 	code_ VARCHAR(75) null,
 	token VARCHAR(75) null,
 	refreshToken VARCHAR(75) null,
-	clientId LONG,
+	clientId VARCHAR(75) null,
 	expiredIn LONG,
 	liferayUserId LONG
+);
+
+create table labimo_TincanActivity (
+	id_ LONG not null primary key,
+	activityId VARCHAR(75) null,
+	objectType VARCHAR(75) null,
+	activityDefinitionName VARCHAR(75) null,
+	activityDefinitionDescription VARCHAR(75) null,
+	activityDefinitionType VARCHAR(75) null,
+	activityDefinitionMoreInfo VARCHAR(75) null,
+	activityDefinitionInteractionType VARCHAR(75) null,
+	activityDefinitionExtensions VARCHAR(75) null,
+	activityDefinitionCrpanswers VARCHAR(75) null,
+	activityDefinitionChoices VARCHAR(75) null,
+	activityDefinitionScales VARCHAR(75) null,
+	activityDefinitionSources VARCHAR(75) null,
+	activityDefinitionTargets VARCHAR(75) null,
+	activityDefinitionSteps VARCHAR(75) null,
+	authoritative VARCHAR(75) null,
+	canonical_version BOOLEAN
+);
+
+create table labimo_TincanActivityProfile (
+	id_ LONG not null primary key,
+	profileId VARCHAR(75) null,
+	activityId VARCHAR(75) null,
+	jsonProfile VARCHAR(75) null,
+	profile VARCHAR(75) null,
+	updated DATE null,
+	content_type VARCHAR(75) null,
+	etag VARCHAR(75) null
 );
 
 create table labimo_TincanActivityState (

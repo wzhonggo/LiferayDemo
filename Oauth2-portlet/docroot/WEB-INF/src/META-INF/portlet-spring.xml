@@ -11,6 +11,10 @@
 	<bean id="com.labimo.portlet.tincan.service.persistence.Oauth2EndpointPersistence" class="com.labimo.portlet.tincan.service.persistence.Oauth2EndpointPersistenceImpl" parent="basePersistence" />
 	<bean id="com.labimo.portlet.tincan.service.Oauth2TokenLocalService" class="com.labimo.portlet.tincan.service.impl.Oauth2TokenLocalServiceImpl" />
 	<bean id="com.labimo.portlet.tincan.service.persistence.Oauth2TokenPersistence" class="com.labimo.portlet.tincan.service.persistence.Oauth2TokenPersistenceImpl" parent="basePersistence" />
+	<bean id="com.labimo.portlet.tincan.service.TincanActivityLocalService" class="com.labimo.portlet.tincan.service.impl.TincanActivityLocalServiceImpl" />
+	<bean id="com.labimo.portlet.tincan.service.persistence.TincanActivityPersistence" class="com.labimo.portlet.tincan.service.persistence.TincanActivityPersistenceImpl" parent="basePersistence" />
+	<bean id="com.labimo.portlet.tincan.service.TincanActivityProfileLocalService" class="com.labimo.portlet.tincan.service.impl.TincanActivityProfileLocalServiceImpl" />
+	<bean id="com.labimo.portlet.tincan.service.persistence.TincanActivityProfilePersistence" class="com.labimo.portlet.tincan.service.persistence.TincanActivityProfilePersistenceImpl" parent="basePersistence" />
 	<bean id="com.labimo.portlet.tincan.service.TincanActivityStateLocalService" class="com.labimo.portlet.tincan.service.impl.TincanActivityStateLocalServiceImpl" />
 	<bean id="com.labimo.portlet.tincan.service.persistence.TincanActivityStatePersistence" class="com.labimo.portlet.tincan.service.persistence.TincanActivityStatePersistenceImpl" parent="basePersistence" />
 	<bean id="com.labimo.portlet.tincan.service.TincanAgentLocalService" class="com.labimo.portlet.tincan.service.impl.TincanAgentLocalServiceImpl" />

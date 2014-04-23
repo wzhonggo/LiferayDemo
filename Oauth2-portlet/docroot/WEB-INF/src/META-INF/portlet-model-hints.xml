@@ -40,9 +40,38 @@
 		<field name="code" type="String" />
 		<field name="token" type="String" />
 		<field name="refreshToken" type="String" />
-		<field name="clientId" type="long" />
+		<field name="clientId" type="String" />
 		<field name="expiredIn" type="long" />
 		<field name="liferayUserId" type="long" />
+	</model>
+	<model name="com.labimo.portlet.tincan.model.TincanActivity">
+		<field name="id" type="long" />
+		<field name="activityId" type="String" />
+		<field name="objectType" type="String" />
+		<field name="activityDefinitionName" type="String" />
+		<field name="activityDefinitionDescription" type="String" />
+		<field name="activityDefinitionType" type="String" />
+		<field name="activityDefinitionMoreInfo" type="String" />
+		<field name="activityDefinitionInteractionType" type="String" />
+		<field name="activityDefinitionExtensions" type="String" />
+		<field name="activityDefinitionCrpanswers" type="String" />
+		<field name="activityDefinitionChoices" type="String" />
+		<field name="activityDefinitionScales" type="String" />
+		<field name="activityDefinitionSources" type="String" />
+		<field name="activityDefinitionTargets" type="String" />
+		<field name="activityDefinitionSteps" type="String" />
+		<field name="authoritative" type="String" />
+		<field name="canonical_version" type="boolean" />
+	</model>
+	<model name="com.labimo.portlet.tincan.model.TincanActivityProfile">
+		<field name="id" type="long" />
+		<field name="profileId" type="String" />
+		<field name="activityId" type="String" />
+		<field name="jsonProfile" type="String" />
+		<field name="profile" type="String" />
+		<field name="updated" type="Date" />
+		<field name="content_type" type="String" />
+		<field name="etag" type="String" />
 	</model>
 	<model name="com.labimo.portlet.tincan.model.TincanActivityState">
 		<field name="id" type="long" />

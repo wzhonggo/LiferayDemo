@@ -33,4 +33,30 @@
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
+  
+    <servlet>
+    <servlet-name>userinfo</servlet-name>
+    <servlet-class>com.liferay.portal.kernel.servlet.PortalDelegateServlet</servlet-class>
+    <init-param>
+      <param-name>servlet-class</param-name>
+      <param-value>com.labimo.oauth2.UserInfoServlet</param-value>
+    </init-param>
+    <init-param>
+      <param-name>sub-context</param-name>
+      <param-value>userinfo</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  	<servlet>
+		<servlet-name>TestServlet</servlet-name>
+		<servlet-class>com.labimo.oauth2.TestServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>TestServlet</servlet-name>
+		<url-pattern>/test/*</url-pattern>
+	</servlet-mapping>
+  
 </web-app>

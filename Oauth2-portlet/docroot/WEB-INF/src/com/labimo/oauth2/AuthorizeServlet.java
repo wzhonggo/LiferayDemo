@@ -62,6 +62,7 @@ public class AuthorizeServlet extends HttpServlet {
 		String redirect_uri = request.getParameter(OAuth.OAUTH_REDIRECT_URI);
 		String client_id = request.getParameter(OAuth.OAUTH_CLIENT_ID);
 		String response_type = request.getParameter(OAuth.OAUTH_RESPONSE_TYPE);
+		String state =  request.getParameter(OAuth.OAUTH_STATE);
 		
 		
 		
@@ -85,6 +86,8 @@ public class AuthorizeServlet extends HttpServlet {
 			request.getSession().setAttribute(OAuth.OAUTH_CLIENT_ID, client_id);
 			request.getSession().setAttribute(OAuth.OAUTH_RESPONSE_TYPE,
 					response_type);
+			request.getSession().setAttribute(OAuth.OAUTH_STATE,
+					state);
 
 			response.sendRedirect(loginURI);
 		}else{
@@ -159,7 +162,6 @@ public class AuthorizeServlet extends HttpServlet {
 			  flag = false;
 		  }
 	        
-	        flag = true;
 			return flag;
 		
 	}

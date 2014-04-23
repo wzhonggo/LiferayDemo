@@ -91,6 +91,51 @@
 			<transient name="primaryKeyObj" />
 		</attributes>
 	</mapped-superclass>
+	<mapped-superclass class="com.labimo.portlet.tincan.model.impl.TincanActivityModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="activityId" />
+			<basic name="objectType" />
+			<basic name="activityDefinitionName" />
+			<basic name="activityDefinitionDescription" />
+			<basic name="activityDefinitionType" />
+			<basic name="activityDefinitionMoreInfo" />
+			<basic name="activityDefinitionInteractionType" />
+			<basic name="activityDefinitionExtensions" />
+			<basic name="activityDefinitionCrpanswers" />
+			<basic name="activityDefinitionChoices" />
+			<basic name="activityDefinitionScales" />
+			<basic name="activityDefinitionSources" />
+			<basic name="activityDefinitionTargets" />
+			<basic name="activityDefinitionSteps" />
+			<basic name="authoritative" />
+			<basic name="canonical_version" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.labimo.portlet.tincan.model.impl.TincanActivityProfileModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="profileId" />
+			<basic name="activityId" />
+			<basic name="jsonProfile" />
+			<basic name="profile" />
+			<basic name="updated">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="content_type" />
+			<basic name="etag" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
 	<mapped-superclass class="com.labimo.portlet.tincan.model.impl.TincanActivityStateModelImpl">
 		<attributes>
 			<id name="id">
@@ -292,6 +337,14 @@
 	</entity>
 	<entity class="com.labimo.portlet.tincan.model.impl.Oauth2TokenImpl" name="Oauth2Token">
 		<table name="labimo_Oauth2Token" />
+		<attributes />
+	</entity>
+	<entity class="com.labimo.portlet.tincan.model.impl.TincanActivityImpl" name="TincanActivity">
+		<table name="labimo_TincanActivity" />
+		<attributes />
+	</entity>
+	<entity class="com.labimo.portlet.tincan.model.impl.TincanActivityProfileImpl" name="TincanActivityProfile">
+		<table name="labimo_TincanActivityProfile" />
 		<attributes />
 	</entity>
 	<entity class="com.labimo.portlet.tincan.model.impl.TincanActivityStateImpl" name="TincanActivityState">
